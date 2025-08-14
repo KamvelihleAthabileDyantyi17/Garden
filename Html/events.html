@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\Css\vent.css">
+    <title>Events Calendar - Garden</title>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                Garden
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chat.html">Anonymous Chat</a></li>
+                    <li><a href="forum.html">Interest Forums</a></li>
+                    <li><a href="vent.html">Vent Wall</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="page-content">
+            <h2>Events Calendar</h2>
+            <p>Discover local meetups or virtual hangouts to connect with others in the community.</p>
+            
+            <div class="events-container">
+                <!-- Calendar Section -->
+                <div class="calendar-section">
+                    <div class="calendar-header">
+                        <div class="calendar-nav">
+                            <button id="prev-month">❮</button>
+                            <button id="next-month">❯</button>
+                        </div>
+                        <div class="calendar-title" id="calendar-title">June 2023</div>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <!-- Calendar will be generated here -->
+                    </div>
+                </div>
+                
+                <!-- Events List Section -->
+                <div class="events-list-section">
+                    <div class="events-list-header">
+                        <h3>Upcoming Events</h3>
+                        <div class="events-filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="meetup">Meetups</button>
+                            <button class="filter-btn" data-filter="virtual">Virtual</button>
+                            <button class="filter-btn" data-filter="workshop">Workshops</button>
+                        </div>
+                    </div>
+                    <div class="events-list" id="events-list">
+                        <!-- Events will be populated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Create Event Form -->
+            <div class="create-event-form" id="create-event-form">
+                <h3 style="margin-bottom: 20px; color: #7a9ad1;">Create New Event</h3>
+                <form id="event-form">
+                    <div class="form-group">
+                        <label for="event-title">Event Title</label>
+                        <input type="text" id="event-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type" required>
+                            <option value="">Select type</option>
+                            <option value="meetup">Meetup</option>
+                            <option value="virtual">Virtual Event</option>
+                            <option value="workshop">Workshop</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-date">Date</label>
+                        <input type="date" id="event-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-time">Time</label>
+                        <input type="time" id="event-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-location">Location</label>
+                        <input type="text" id="event-location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-description">Description</label>
+                        <textarea id="event-description" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-event">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Event Detail Modal -->
+    <div class="event-modal" id="event-modal">
+        <div class="event-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-event-title">Event Title</h3>
+                <button class="modal-close" id="modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-event-type" id="modal-event-type">Event Type</div>
+                <div class="modal-event-description" id="modal-event-description">
+                    Event description will go here.
+                </div>
+                <div class="modal-event-details">
+                    <div class="modal-event-detail">
+                        <div class="modal-event-detail-icon">📅</div>
+                        <div class="modal-event-detail-content">
+                            <div class="modal-event-detail-label">Date & Time</div>
+                            <div id="modal-event-datetime">June 15, 2023 at 3:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="modal-event-detail">
+                        <div class="modal-event-detail-icon">📍</div>
+                        <div class="modal-event-detail-content">
+                            <div class="modal-event-detail-label">Location</div>
+                            <div id="modal-event-location">Student Center</div>
+                        </div>
+                    </div>
+                    <div class="modal-event-detail">
+                        <div class="modal-event-detail-icon">👥</div>
+                        <div class="modal-event-detail-content">
+                            <div class="modal-event-detail-label">Attendees</div>
+                            <div id="modal-event-attendees">12 people attending</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="share-btn" id="share-event">
+                    <span>🔗</span>
+                    <span>Share</span>
+                </button>
+                <button class="rsvp-btn" id="rsvp-event">RSVP</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Garden. All rights reserved. | A safe space for students to grow together.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

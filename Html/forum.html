@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\Css\forum.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Interest Forums - Garden</title>
+    
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                Garden
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chat.html">Anonymous Chat</a></li>
+                    <li><a href="forum.html">Interest Forums</a></li>
+                    <li><a href="vent.html">Vent Wall</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="page-content">
+            <h2>Interest Forums</h2>
+            <p>Join discussions about topics like music, gaming, academics, activism, and more with like-minded peers.</p>
+            
+            <!-- Forum Categories View -->
+            <div id="categories-view">
+                <div class="forum-categories">
+                    <div class="category-card" data-category="music">
+                        <div class="category-header" style="background-color: #8a5a7c;">
+                            <span class="icon">🎵</span>
+                            Music
+                        </div>
+                        <div class="category-content">
+                            <div class="category-stats">
+                                <span>Threads: <span id="music-threads">0</span></span>
+                                <span>Posts: <span id="music-posts">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="gaming">
+                        <div class="category-header" style="background-color: #7a9ad1;">
+                            <span class="icon">🎮</span>
+                            Gaming
+                        </div>
+                        <div class="category-content">
+                            <div class="category-stats">
+                                <span>Threads: <span id="gaming-threads">0</span></span>
+                                <span>Posts: <span id="gaming-posts">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="academics">
+                        <div class="category-header" style="background-color: #5b8f7d;">
+                            <span class="icon">📚</span>
+                            Academics
+                        </div>
+                        <div class="category-content">
+                            <div class="category-stats">
+                                <span>Threads: <span id="academics-threads">0</span></span>
+                                <span>Posts: <span id="academics-posts">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="activism">
+                        <div class="category-header" style="background-color: #d17a7a;">
+                            <span class="icon">✊</span>
+                            Activism
+                        </div>
+                        <div class="category-content">
+                            <div class="category-stats">
+                                <span>Threads: <span id="activism-threads">0</span></span>
+                                <span>Posts: <span id="activism-posts">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="wellness">
+                        <div class="category-header" style="background-color: #7ad1a7;">
+                            <span class="icon">🧘</span>
+                            Wellness
+                        </div>
+                        <div class="category-content">
+                            <div class="category-stats">
+                                <span>Threads: <span id="wellness-threads">0</span></span>
+                                <span>Posts: <span id="wellness-posts">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="technology">
+                        <div class="category-header" style="background-color: #5a7cd1;">
+                            <span class="icon">💻</span>
+                            Technology
+                        </div>
+                        <div class="category-content">
+                            <div class="category-stats">
+                                <span>Threads: <span id="technology-threads">0</span></span>
+                                <span>Posts: <span id="technology-posts">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Forum Threads View -->
+            <div id="threads-view" style="display: none;">
+                <div class="threads-header">
+                    <button class="back-button" id="back-to-categories">
+                        <span class="icon">←</span> Back to Categories
+                    </button>
+                    <h3 id="current-category-title" style="color: #4a7c59;"></h3>
+                    <button class="new-thread-btn" id="show-new-thread-form">
+                        <span class="icon">+</span> New Thread
+                    </button>
+                </div>
+                
+                <div class="thread-list" id="thread-list">
+                    <!-- Threads will be populated here -->
+                </div>
+            </div>
+            
+            <!-- New Thread Form -->
+            <div class="new-thread-form" id="new-thread-form">
+                <h3 style="margin-bottom: 20px; color: #4a7c59;">Create New Thread</h3>
+                <form id="create-thread-form">
+                    <div class="form-group">
+                        <label for="thread-title">Thread Title</label>
+                        <input type="text" id="thread-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="thread-content">Content</label>
+                        <textarea id="thread-content" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-new-thread">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Thread</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Thread Detail View -->
+            <div class="thread-detail" id="thread-detail">
+                <div class="thread-header">
+                    <h2 class="thread-title-large" id="detail-thread-title"></h2>
+                    <div class="thread-meta-large">
+                        Started by <span id="detail-thread-author"></span> on <span id="detail-thread-date"></span>
+                    </div>
+                </div>
+                
+                <div class="thread-posts" id="thread-posts">
+                    <!-- Posts will be populated here -->
+                </div>
+                
+                <div class="new-post-form">
+                    <h3 style="margin-bottom: 15px; color: #4a7c59;">Add Reply</h3>
+                    <form id="create-post-form">
+                        <div class="form-group">
+                            <textarea id="post-content" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Post Reply</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Garden. All rights reserved. | A safe space for students to grow together.</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

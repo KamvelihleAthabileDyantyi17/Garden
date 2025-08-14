@@ -1,0 +1,366 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #4a7c59;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        /* Page Content */
+        .page-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 30px 0;
+        }
+        
+        .page-content h2 {
+            color: #4a7c59;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .page-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Vent Wall Styles */
+        .vent-intro {
+            background-color: #f0f7f4;
+            border-left: 4px solid #d17a7a;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .vent-intro h3 {
+            color: #d17a7a;
+            margin-bottom: 10px;
+        }
+        
+        /* New Vent Form */
+        .new-vent-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #d17a7a;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background-color: white;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background-color: #d17a7a;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c56868;
+        }
+        
+        /* Vent Wall */
+        .vent-wall {
+            margin-top: 30px;
+        }
+        
+        .vent-filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .filter-tab {
+            padding: 8px 16px;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-tab.active {
+            background-color: #d17a7a;
+            color: white;
+        }
+        
+        .filter-tab:hover:not(.active) {
+            background-color: #e1e1e1;
+        }
+        
+        .vent-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .vent-post {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .vent-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .vent-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .vent-type {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .vent-type.vent {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .vent-type.celebration {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .vent-meta {
+            color: #777;
+            font-size: 0.85rem;
+        }
+        
+        .vent-content {
+            padding: 20px;
+        }
+        
+        .vent-text {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .vent-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .vent-reactions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .reaction-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        
+        .reaction-btn:hover {
+            color: #d17a7a;
+        }
+        
+        .reaction-btn.active {
+            color: #d17a7a;
+        }
+        
+        .report-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #777;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s ease;
+        }
+        
+        .report-btn:hover {
+            color: #d32f2f;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #777;
+        }
+        
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .vent-filters {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .vent-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+   

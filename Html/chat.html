@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Chat - Garden</title>
+    <link rel="stylesheet" href="\Css\chat.css">
+    <script src="\Js\chat.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                Garden
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chat.html">Anonymous Chat</a></li>
+                    <li><a href="forums.html">Interest Forums</a></li>
+                    <li><a href="vent.html">Vent Wall</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="page-content">
+            <h2>Anonymous Chat</h2>
+            <p>Connect with other students anonymously in a safe, supportive environment. Share your thoughts, ask for advice, or simply have a conversation without revealing your identity.</p>
+            
+            <div class="chat-guidelines">
+                <h3>Chat Guidelines</h3>
+                <ul>
+                    <li>Be respectful and kind to your chat partner</li>
+                    <li>Do not share personal identifying information</li>
+                    <li>Report any inappropriate behavior immediately</li>
+                    <li>Remember that the other person is also a student seeking connection</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <div class="status-indicator"></div>
+                    <span>Anonymous Chat</span>
+                </div>
+                <div>
+                    <span class="anonymous-badge">You: <span id="user-id">Anonymous</span></span>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be displayed here -->
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="message-input" placeholder="Type your message...">
+                <button class="send-button" id="send-button">➤</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Garden. All rights reserved. | A safe space for students to grow together.</p>
+        </div>
+    </footer>
+
+  
+</body>
+</html>

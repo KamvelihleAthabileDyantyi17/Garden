@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\Css\vent.css">
+    <title>Vent Wall - Garden</title>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                Garden
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chat.html">Anonymous Chat</a></li>
+                    <li><a href="forums.html">Interest Forums</a></li>
+                    <li><a href="vent.html">Vent Wall</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="page-content">
+            <h2>Vent Wall</h2>
+            <p>Share your frustrations or celebrations in a supportive, judgment-free space. This is your place to express yourself freely and connect with others who understand.</p>
+            
+            <div class="vent-intro">
+                <h3>Community Guidelines</h3>
+                <ul>
+                    <li>Be respectful and supportive of others' experiences</li>
+                    <li>No personal attacks or hate speech</li>
+                    <li>Remember that everyone is here to share and be heard</li>
+                    <li>If you see something inappropriate, please report it</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="new-vent-form">
+            <h3 style="margin-bottom: 20px; color: #d17a7a;">Share Your Thoughts</h3>
+            <form id="create-vent-form">
+                <div class="form-group">
+                    <label for="vent-type">What are you sharing?</label>
+                    <select id="vent-type" required>
+                        <option value="">Select a type</option>
+                        <option value="vent">Venting - Something that's bothering me</option>
+                        <option value="celebration">Celebration - Something I'm excited about</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vent-content">Your thoughts</label>
+                    <textarea id="vent-content" placeholder="Share what's on your mind..." required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Share</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="vent-wall">
+            <div class="vent-filters">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="vent">Vents</button>
+                    <button class="filter-tab" data-filter="celebration">Celebrations</button>
+                </div>
+                <div class="sort-options">
+                    <select id="sort-vents">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="most-supported">Most Supported</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="vent-posts" id="vent-posts">
+                <!-- Vent posts will be populated here -->
+            </div>
+            
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-state-icon">🗣️</div>
+                <h3>No vents yet</h3>
+                <p>Be the first to share your thoughts on the Vent Wall!</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Garden. All rights reserved. | A safe space for students to grow together.</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

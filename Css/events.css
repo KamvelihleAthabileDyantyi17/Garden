@@ -1,0 +1,582 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #4a7c59;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        /* Page Content */
+        .page-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 30px 0;
+        }
+        
+        .page-content h2 {
+            color: #4a7c59;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .page-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Events Calendar */
+        .events-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        /* Calendar Section */
+        .calendar-section {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .calendar-header {
+            background-color: #7a9ad1;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .calendar-nav {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .calendar-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .calendar-nav button:hover {
+            transform: scale(1.2);
+        }
+        
+        .calendar-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        
+        .calendar-day-header {
+            padding: 10px;
+            text-align: center;
+            font-weight: 500;
+            background-color: #f1f5f9;
+            color: #4a7c59;
+        }
+        
+        .calendar-day {
+            min-height: 80px;
+            padding: 8px;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+        
+        .calendar-day:nth-child(7n) {
+            border-right: none;
+        }
+        
+        .calendar-day.other-month {
+            color: #ccc;
+            background-color: #f9f9f9;
+        }
+        
+        .calendar-day.today {
+            background-color: #f0f7ff;
+        }
+        
+        .calendar-day-number {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .calendar-day.today .calendar-day-number {
+            color: #7a9ad1;
+            font-weight: bold;
+        }
+        
+        .calendar-event {
+            font-size: 0.75rem;
+            padding: 2px 5px;
+            margin-bottom: 3px;
+            border-radius: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+        
+        .calendar-event.meetup {
+            background-color: #d17a7a;
+            color: white;
+        }
+        
+        .calendar-event.virtual {
+            background-color: #7ad1a7;
+            color: white;
+        }
+        
+        .calendar-event.workshop {
+            background-color: #7a9ad1;
+            color: white;
+        }
+        
+        /* Events List Section */
+        .events-list-section {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .events-list-header {
+            background-color: #7a9ad1;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .events-filters {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .filter-btn.active {
+            background-color: white;
+            color: #7a9ad1;
+        }
+        
+        .events-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .event-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .event-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .event-item:last-child {
+            border-bottom: none;
+        }
+        
+        .event-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .event-title {
+            font-weight: bold;
+            color: #4a7c59;
+        }
+        
+        .event-type {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .event-type.meetup {
+            background-color: #ffebee;
+            color: #d17a7a;
+        }
+        
+        .event-type.virtual {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .event-type.workshop {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .event-details {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .event-detail {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Event Detail Modal */
+        .event-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .event-modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            color: #4a7c59;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-event-type {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .modal-event-type.meetup {
+            background-color: #ffebee;
+            color: #d17a7a;
+        }
+        
+        .modal-event-type.virtual {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .modal-event-type.workshop {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .modal-event-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .modal-event-details {
+            margin-bottom: 25px;
+        }
+        
+        .modal-event-detail {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+        
+        .modal-event-detail-icon {
+            width: 24px;
+            color: #7a9ad1;
+            margin-right: 10px;
+        }
+        
+        .modal-event-detail-content {
+            flex: 1;
+        }
+        
+        .modal-event-detail-label {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        
+        .modal-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .rsvp-btn {
+            background-color: #4a7c59;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .rsvp-btn:hover {
+            background-color: #3a6249;
+        }
+        
+        .rsvp-btn.rsvpd {
+            background-color: #6c757d;
+        }
+        
+        .share-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* Create Event Form */
+        .create-event-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: none;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #7a9ad1;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: #7a9ad1;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a8ac1;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+        }
+        
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .events-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .calendar-day {
+                min-height: 60px;
+            }
+            
+            .events-filters {
+                flex-wrap: wrap;
+            }
+        }
